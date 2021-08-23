@@ -12,9 +12,15 @@ const tasks = [
     task: 'sample',
     isDone: false,
   },
+  {
+    task: 'sample2',
+    isDone: false,
+  },
 ];
 
-export const getTasks = () => Promise.resolve({ data: tasks });
+export const getTasks = () => {
+  return Promise.resolve({ data: tasks });
+};
 
 // export const createTask = user => apiInstance.post('/tasks', task);
 export const createTask = task => {

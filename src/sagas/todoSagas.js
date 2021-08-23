@@ -12,7 +12,7 @@ import {
 } from '../actions/actions';
 import * as API from '../api/api';
 
-export function * getTasks () {
+export function * getTasksSaga () {
   yield put(getTasksRequest);
   try {
     const { data: tasks } = yield API.getTasks();
@@ -22,7 +22,7 @@ export function * getTasks () {
   }
 }
 
-export function * createTask (action) {
+export function * createTaskSaga (action) {
   const { task } = action;
 
   yield put(createTaskRequest());
@@ -34,7 +34,7 @@ export function * createTask (action) {
   }
 }
 
-export function * deleteTask (action) {
+export function * deleteTaskSaga (action) {
   const { id } = action;
   yield put(deleteTaskRequest());
   try {
