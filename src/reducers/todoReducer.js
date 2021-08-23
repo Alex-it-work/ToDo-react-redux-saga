@@ -1,3 +1,5 @@
+import ACTION_TYPES from './../actions/actionsTypes';
+
 const initialState = {
   tasks: [],
   isFetching: false,
@@ -7,7 +9,13 @@ const initialState = {
 function todoReducer (state = initialState, action) {
   const { type } = action;
   switch (type) {
-    case ACTIO
+    case ACTION_TYPES.GET_TASKS_REQUEST: {
+      return {
+        ...state,
+        isFetching: true,
+        e: null,
+      };
+    }
     default:
       return state;
   }

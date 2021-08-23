@@ -13,7 +13,7 @@ export const getTasks = () => Promise.resolve({ data: tasks });
 
 // export const createTask = user => apiInstance.post('/tasks', task);
 export const createTask = task => {
-  const newUser = { ...task, id: Date.now() };
+  const newTask = { ...task, id: Date.now() };
   tasks.push(newTask);
   return Promise.resolve({ data: newTask });
 };
