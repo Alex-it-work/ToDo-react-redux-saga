@@ -1,6 +1,7 @@
 import React from 'react';
 
-function AddTask () {
+function AddTask (props) {
+    const {createTask}
   return <div></div>;
 }
 

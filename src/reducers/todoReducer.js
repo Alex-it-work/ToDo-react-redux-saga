@@ -7,6 +7,7 @@ const initialState = {
 function todoReducer (state = initialState, action) {
   const { type } = action;
   switch (type) {
+    case ACTIO
     default:
       return state;
   }

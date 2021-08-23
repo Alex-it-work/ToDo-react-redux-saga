@@ -6,54 +6,54 @@ export const getTasksRequest = () => ({
   type: ACTION_TYPES.GET_TASKS_REQUEST,
 });
 
-export const getTasksSuccess = users => ({
+export const getTasksSuccess = tasks => ({
   type: ACTION_TYPES.GET_TASKS_SUCCESS,
-  users: users,
+  tasks,
 });
 
 export const getTasksError = e => ({
   type: ACTION_TYPES.GET_TASKS_ERROR,
-  error: e,
+  e,
 });
 
 // Create:
 
-export const createTaskAction = user => ({
+export const createTaskAction = task => ({
   type: ACTION_TYPES.CREATE_TASK_ACTION,
-  user: user,
+  task,
 });
 
 export const createTaskRequest = () => ({
   type: ACTION_TYPES.CREATE_TASK_REQUEST,
 });
 
-export const createTaskSuccess = user => ({
+export const createTaskSuccess = task => ({
   type: ACTION_TYPES.CREATE_TASK_SUCCESS,
-  user: user,
+  task,
 });
 
 export const createTaskError = e => ({
   type: ACTION_TYPES.CREATE_TASK_ERROR,
-  error: e,
+  e,
 });
 
 //Delete:
 
 export const deleteTaskAction = id => ({
   type: ACTION_TYPES.DELETE_TASK_ACTION,
-  id: id,
+  id,
 });
 
 export const deleteTaskRequest = () => ({
   type: ACTION_TYPES.DELETE_TASK_REQUEST,
 });
 
-export const deleteTaskSuccess = deletedUser => ({
+export const deleteTaskSuccess = deletedTask => ({
   type: ACTION_TYPES.DELETE_TASK_SUCCESS,
-  deletedUser,
+  deletedTask,
 });
 
 export const deleteTaskError = e => ({
   type: ACTION_TYPES.DELETE_TASK_ERROR,
-  error: e,
+  e,
 });
