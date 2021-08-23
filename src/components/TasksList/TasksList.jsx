@@ -15,7 +15,7 @@ function TasksList (props) {
     };
     return (
       <li key={id}>
-        ID: {id} name: {task}
+        ID: {id} task: {task}
         <input type='checkbox' checked={isDone} />
         <button onClick={deleteHandler}>Move</button>
       </li>
@@ -30,7 +30,7 @@ function TasksList (props) {
   );
 }
 
-const mapStateToProps = state => state.tasks;
+const mapStateToProps = state => state.task;
 
 const mapDispatchToProps = dispatch => ({
   getTasks: () => dispatch(actionCreators.getTasksAction()),

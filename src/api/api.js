@@ -1,15 +1,15 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-const axiosOptions = {
-  baseUrl: 'http://127.0.0.1:5000/api',
-};
+// const axiosOptions = {
+//   baseUrl: 'http://127.0.0.1:5000/api',
+// };
 
-const apiInstance = axios.create(axiosOptions);
+// const apiInstance = axios.create(axiosOptions);
 
 // export const getTasks = () => apiInstance.get('/tasks');
 const tasks = [
   {
-    task: sample,
+    task: 'sample',
     isDone: false,
   },
 ];
