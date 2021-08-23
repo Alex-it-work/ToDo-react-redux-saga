@@ -7,7 +7,12 @@ const axiosOptions = {
 const apiInstance = axios.create(axiosOptions);
 
 // export const getTasks = () => apiInstance.get('/tasks');
-const tasks = [];
+const tasks = [
+  {
+    task: sample,
+    isDone: false,
+  },
+];
 
 export const getTasks = () => Promise.resolve({ data: tasks });
 
