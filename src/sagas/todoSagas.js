@@ -9,7 +9,7 @@ import {
   getTasksError,
   getTasksRequest,
   getTasksSuccess,
-} from '../actions/index';
+} from '../actions';
 import * as API from '../api';
 
 export function * getTasksSaga () {

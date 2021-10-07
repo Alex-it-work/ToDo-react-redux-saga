@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import * as actionCreators from '../../actions';
+import { getTasksAction, deleteTaskAction } from '../../actions';
 
 function TasksList (props) {
   const { tasks, isFetching, e, getTasks, deleteTask } = props;
@@ -28,7 +28,7 @@ function TasksList (props) {
     <>
       {isFetching && <div>Loading...</div>}
       {e && <div>ERROR</div>}
-      <ul>{tasks}</ul>
+      <ul>{tasks.map(mapTask)}</ul>
     </>
   );
 }
@@ -36,8 +36,8 @@ function TasksList (props) {
 const mapStateToProps = state => state.todo;
 
 const mapDispatchToProps = dispatch => ({
-  getTasks: () => dispatch(actionCreators.getTasksAction()),
-  deleteTask: id => dispatch(actionCreators.deleteTaskAction(id)),
+  getTasks: () => dispatch(getTasksAction()),
+  deleteTask: id => dispatch(deleteTaskAction(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TasksList);
