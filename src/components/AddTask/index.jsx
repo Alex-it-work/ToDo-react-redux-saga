@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
 import { connect } from 'react-redux';
-import { createTaskAction } from '../../actions/actions';
+import { createTaskAction } from '../../actions';
 
 function AddTask (props) {
   const { createTask } = props;

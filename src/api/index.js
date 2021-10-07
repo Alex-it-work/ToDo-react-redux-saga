@@ -9,10 +9,12 @@
 // export const getTasks = () => apiInstance.get('/tasks');
 const tasks = [
   {
+    id: Date.now() + Math.trunc(Math.random() * 1000000),
     task: 'sample',
     isDone: false,
   },
   {
+    id: Date.now() + Math.trunc(Math.random() * 1000000),
     task: 'sample2',
     isDone: false,
   },

@@ -1,7 +1,7 @@
 import React from 'react';
-import AddTask from '../../components/AddTask/AddTask';
-import TasksFilters from '../../components/TasksFilters/TasksFilters';
-import TasksList from '../../components/TasksList/TasksList';
+import AddTask from '../../components/AddTask';
+import TasksFilters from '../../components/TasksFilters';
+import TasksList from '../../components/TasksList';
 
 function ToDoPage () {
   return (

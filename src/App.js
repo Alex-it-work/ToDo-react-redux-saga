@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import ToDoPage from './pages/ToDoPage/ToDoPage';
+import ToDoPage from './pages/ToDoPage';
 
 function App () {
   return <ToDoPage />;

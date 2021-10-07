@@ -9,8 +9,8 @@ import {
   getTasksError,
   getTasksRequest,
   getTasksSuccess,
-} from '../actions/actions';
-import * as API from '../api/api';
+} from '../actions/index';
+import * as API from '../api';
 
 export function * getTasksSaga () {
   yield put(getTasksRequest);
