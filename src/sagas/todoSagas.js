@@ -38,8 +38,8 @@ export function * deleteTaskSaga (action) {
   const { id } = action;
   yield put(deleteTaskRequest());
   try {
-    const { data: deleteTask } = yield API.deleteTask(id);
-    yield put(deleteTaskSuccess(deleteTask));
+    const { data: deletedTask } = yield API.deleteTask(id);
+    yield put(deleteTaskSuccess(deletedTask[0]));
   } catch (e) {
     yield put(deleteTaskError(e));
   }

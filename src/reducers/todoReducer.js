@@ -54,10 +54,10 @@ function todoReducer (state = initialState, action) {
       };
     }
     case ACTION_TYPES.DELETE_TASK_SUCCESS: {
-      const { id } = action;
+      const { deletedTask } = action;
       const { tasks } = state;
-      const newTasks = tasks.filter(task => task.id !== id);
-      return { ...state, isFetching: false, tasks: newTasks };
+      const updatedTasks = tasks.filter(task => task !== deletedTask);
+      return { ...state, isFetching: false, tasks: updatedTasks };
     }
     case ACTION_TYPES.DELETE_TASK_ERROR: {
       const { e } = action;
