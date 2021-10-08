@@ -28,12 +28,12 @@ function TasksList (props) {
     <>
       {isFetching && <div>Loading...</div>}
       {e && <div>ERROR</div>}
-      <ul>{tasks.map(mapTask)}</ul>
+      <ul>{props.todo.tasks.map(mapTask)}</ul>
     </>
   );
 }
 
-const mapStateToProps = state => state.todo;
+const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
   getTasks: () => dispatch(getTasksAction()),

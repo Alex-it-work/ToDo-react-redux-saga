@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 // import axios from 'axios';
 
 // const axiosOptions = {
@@ -9,12 +10,12 @@
 // export const getTasks = () => apiInstance.get('/tasks');
 const tasks = [
   {
-    id: Date.now() + Math.trunc(Math.random() * 1000000),
+    id: uuidv4(),
     task: 'sample',
     isDone: false,
   },
   {
-    id: Date.now() + Math.trunc(Math.random() * 1000000),
+    id: uuidv4(),
     task: 'sample2',
     isDone: false,
   },
@@ -26,7 +27,7 @@ export const getTasks = () => {
 
 // export const createTask = user => apiInstance.post('/tasks', task);
 export const createTask = task => {
-  const newTask = { ...task, id: Date.now() };
+  const newTask = { ...task, id: uuidv4() };
   tasks.push(newTask);
   return Promise.resolve({ data: newTask });
 };
