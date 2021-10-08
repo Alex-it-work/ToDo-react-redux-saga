@@ -13,7 +13,7 @@ import {
 import * as API from '../api';
 
 export function * getTasksSaga () {
-  yield put(getTasksRequest);
+  yield put(getTasksRequest());
   try {
     const { data: tasks } = yield API.getTasks();
     yield put(getTasksSuccess(tasks));

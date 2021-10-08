@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getTasksAction, deleteTaskAction } from '../../actions';
 
 function TasksList (props) {
-  const { tasks, isFetching, e, getTasks, deleteTask } = props;
+  const { tasks, isFetching, error, getTasks, deleteTask } = props;
 
   useEffect(() => {
     getTasks();
@@ -27,7 +27,7 @@ function TasksList (props) {
   return (
     <>
       {isFetching && <div>Loading...</div>}
-      {e && <div>ERROR</div>}
+      {error && <div>ERROR</div>}
       <ul>{tasks.map(mapTask)}</ul>
     </>
   );
