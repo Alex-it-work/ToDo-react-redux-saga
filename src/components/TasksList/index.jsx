@@ -33,7 +33,7 @@ function TasksList (props) {
   );
 }
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => state.todo;
 
 const mapDispatchToProps = dispatch => ({
   getTasks: () => dispatch(getTasksAction()),
