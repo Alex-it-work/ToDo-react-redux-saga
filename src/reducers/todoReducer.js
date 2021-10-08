@@ -37,7 +37,8 @@ function todoReducer (state = initialState, action) {
     case ACTION_TYPES.CREATE_TASK_SUCCESS: {
       const { task: newTask } = action;
       const { tasks } = state;
-      return { ...state, isFetching: false, tasks: [...tasks, newTask] };
+      tasks.unshift(newTask);
+      return { ...state, isFetching: false, tasks };
     }
     case ACTION_TYPES.CREATE_TASK_ERROR: {
       const { e } = action;
@@ -55,8 +56,8 @@ function todoReducer (state = initialState, action) {
     case ACTION_TYPES.DELETE_TASK_SUCCESS: {
       const { id } = action;
       const { tasks } = state;
-      const updatedTasks = tasks.filter(task => task.id !== id);
-      return { ...state, isFetching: false, tasks: updatedTasks };
+      const newTasks = tasks.filter(task => task.id !== id);
+      return { ...state, isFetching: false, tasks: newTasks };
     }
     case ACTION_TYPES.DELETE_TASK_ERROR: {
       const { e } = action;

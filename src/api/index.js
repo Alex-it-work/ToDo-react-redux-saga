@@ -27,8 +27,8 @@ export const getTasks = () => {
 
 // export const createTask = user => apiInstance.post('/tasks', task);
 export const createTask = task => {
-  const newTask = { ...task, id: uuidv4() };
-  tasks.push(newTask);
+  const newTask = { ...task, id: uuidv4(), isDone: false };
+  tasks.unshift(newTask);
   return Promise.resolve({ data: newTask });
 };
 
