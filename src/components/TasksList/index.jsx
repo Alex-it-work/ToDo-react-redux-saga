@@ -28,7 +28,7 @@ function TasksList (props) {
     <>
       {isFetching && <div>Loading...</div>}
       {e && <div>ERROR</div>}
-      <ul>{props.todo.tasks.map(mapTask)}</ul>
+      <ul>{tasks.map(mapTask)}</ul>
     </>
   );
 }
