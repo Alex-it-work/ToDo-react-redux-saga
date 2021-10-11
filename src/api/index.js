@@ -8,20 +8,12 @@ import { v4 as uuidv4 } from 'uuid';
 // const apiInstance = axios.create(axiosOptions);
 
 // export const getTasks = () => apiInstance.get('/tasks');
-const tasks = [
-  {
-    id: uuidv4(),
-    task: 'sample',
-    isDone: false,
-  },
-  {
-    id: uuidv4(),
-    task: 'sample2',
-    isDone: false,
-  },
-];
+const tasks = [];
 
-export const getTasks = () => {
+export const updateTask = id => {
+  const index = tasks.findIndex(task => task.id === id);
+  tasks[index].isDone = !tasks[index].isDone;
+
   return Promise.resolve({ data: tasks });
 };
 

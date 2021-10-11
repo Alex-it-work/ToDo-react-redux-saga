@@ -6,19 +6,21 @@ import {
   deleteTaskError,
   deleteTaskRequest,
   deleteTaskSuccess,
-  getTasksError,
-  getTasksRequest,
-  getTasksSuccess,
+  updateTaskError,
+  updateTaskRequest,
+  updateTaskSuccess,
 } from '../actions';
 import * as API from '../api';
 
-export function * getTasksSaga () {
-  yield put(getTasksRequest());
+export function * updateTaskSaga (action) {
+  const { id } = action;
+
+  yield put(updateTaskRequest());
   try {
-    const { data: tasks } = yield API.getTasks();
-    yield put(getTasksSuccess(tasks));
+    const { data: tasks } = yield API.updateTask(id);
+    yield put(updateTaskSuccess(tasks));
   } catch (e) {
-    yield put(getTasksError(e));
+    yield put(updateTaskError(e));
   }
 }
 

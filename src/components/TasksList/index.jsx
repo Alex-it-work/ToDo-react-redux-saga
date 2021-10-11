@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { getTasksAction, deleteTaskAction } from '../../actions';
+import { updateTaskAction, deleteTaskAction } from '../../actions';
 
 function TasksList (props) {
-  const { tasks, isFetching, error, getTasks, deleteTask } = props;
-
-  useEffect(() => {
-    getTasks();
-  }, []);
+  const { tasks, isFetching, error, updateTask, deleteTask } = props;
 
   const mapTask = ({ id, task, isDone }) => {
+    const isDoneTaskHandler = () => {
+      updateTask(id);
+    };
     const deleteHandler = () => {
       deleteTask(id);
     };
@@ -17,7 +16,11 @@ function TasksList (props) {
       <>
         <li key={id}>
           ID: {id} task: {task}
-          <input type='checkbox' checked={isDone} />
+          <input
+            type='checkbox'
+            checked={isDone}
+            onChange={isDoneTaskHandler}
+          />
           <button onClick={deleteHandler}>Move</button>
         </li>
       </>
@@ -36,7 +39,7 @@ function TasksList (props) {
 const mapStateToProps = state => state.todo;
 
 const mapDispatchToProps = dispatch => ({
-  getTasks: () => dispatch(getTasksAction()),
+  updateTask: id => dispatch(updateTaskAction(id)),
   deleteTask: id => dispatch(deleteTaskAction(id)),
 });
 

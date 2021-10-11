@@ -1,20 +1,21 @@
 import ACTION_TYPES from './actionsTypes';
 
-export const getTasksAction = () => ({
-  type: ACTION_TYPES.GET_TASKS_ACTION,
+export const updateTaskAction = id => ({
+  type: ACTION_TYPES.UPDATE_TASK_ACTION,
+  id,
 });
 
-export const getTasksRequest = () => ({
-  type: ACTION_TYPES.GET_TASKS_REQUEST,
+export const updateTaskRequest = () => ({
+  type: ACTION_TYPES.UPDATE_TASK_REQUEST,
 });
 
-export const getTasksSuccess = tasks => ({
-  type: ACTION_TYPES.GET_TASKS_SUCCESS,
+export const updateTaskSuccess = tasks => ({
+  type: ACTION_TYPES.UPDATE_TASK_SUCCESS,
   tasks,
 });
 
-export const getTasksError = e => ({
-  type: ACTION_TYPES.GET_TASKS_ERROR,
+export const updateTaskError = e => ({
+  type: ACTION_TYPES.UPDATE_TASK_ERROR,
   e,
 });
 

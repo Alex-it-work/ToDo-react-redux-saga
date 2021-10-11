@@ -9,19 +9,19 @@ const initialState = {
 function todoReducer (state = initialState, action) {
   const { type } = action;
   switch (type) {
-    //GET
-    case ACTION_TYPES.GET_TASKS_REQUEST: {
+    //UPDATE
+    case ACTION_TYPES.UPDATE_TASK_REQUEST: {
       return {
         ...state,
         isFetching: true,
         error: null,
       };
     }
-    case ACTION_TYPES.GET_TASKS_SUCCESS: {
+    case ACTION_TYPES.UPDATE_TASK_SUCCESS: {
       const { tasks } = action;
       return { ...state, isFetching: false, tasks, error: null };
     }
-    case ACTION_TYPES.GET_TASKS_ERROR: {
+    case ACTION_TYPES.UPDATE_TASK_ERROR: {
       const { e } = action;
       return { ...state, isFetching: false, error: e };
     }
@@ -38,6 +38,7 @@ function todoReducer (state = initialState, action) {
       const { task: newTask } = action;
       const { tasks } = state;
       tasks.unshift(newTask);
+
       return { ...state, isFetching: false, tasks };
     }
     case ACTION_TYPES.CREATE_TASK_ERROR: {
