@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateTaskAction, deleteTaskAction } from '../../actions';
+import styles from './TaskList.module.scss';
 
 function TasksList (props) {
   const { tasks, isFetching, error, updateTask, deleteTask } = props;
@@ -13,17 +14,11 @@ function TasksList (props) {
       deleteTask(id);
     };
     return (
-      <>
-        <li key={id}>
-          ID: {id} task: {task}
-          <input
-            type='checkbox'
-            checked={isDone}
-            onChange={isDoneTaskHandler}
-          />
-          <button onClick={deleteHandler}>Move</button>
-        </li>
-      </>
+      <li key={id} className={styles.task}>
+        <span> {task}</span>
+        <input type='checkbox' checked={isDone} onChange={isDoneTaskHandler} />
+        <button onClick={deleteHandler}>Move</button>
+      </li>
     );
   };
 
@@ -31,7 +26,7 @@ function TasksList (props) {
     <>
       {isFetching && <div>Loading...</div>}
       {error && <div>ERROR</div>}
-      <ul>{tasks.map(mapTask)}</ul>
+      <ul className={styles.tasks}>{tasks.map(mapTask)}</ul>
     </>
   );
 }
