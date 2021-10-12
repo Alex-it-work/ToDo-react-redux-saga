@@ -27,11 +27,28 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 3px;
-  min-width: 320 px;
   margin-bottom: 10px;
   width: 100%;
 }
 
+@media screen and (max-width: 500px) {
+  .task {
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+  }
+  .moveButton {
+    width: 100%;
+  }
+  .taskText {
+    text-align: center;
+    margin: 10px;
+  }
+  .isDone {
+    margin-right: none;
+    margin-bottom: 10px;
+  }
+}
 .task:nth-child(even) {
   background-color: rgb(182, 182, 182);
 }
