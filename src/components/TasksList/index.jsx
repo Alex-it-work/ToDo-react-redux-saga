@@ -15,9 +15,16 @@ function TasksList (props) {
     };
     return (
       <li key={id} className={styles.task}>
-        <span> {task}</span>
-        <input type='checkbox' checked={isDone} onChange={isDoneTaskHandler} />
-        <button onClick={deleteHandler}>Move</button>
+        <span className={styles.taskText}> {task}</span>
+        <input
+          className={styles.isDone}
+          type='checkbox'
+          checked={isDone}
+          onChange={isDoneTaskHandler}
+        />
+        <button className={styles.moveButton} onClick={deleteHandler}>
+          Move
+        </button>
       </li>
     );
   };

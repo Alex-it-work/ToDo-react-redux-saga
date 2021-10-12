@@ -1,4 +1,10 @@
-.moveButton {
+.inputTask {
+  height: 30px;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+.pushButton {
   position: relative;
   display: inline-block;
   font-size: 90%;
@@ -13,34 +19,20 @@
     rgb(110, 112, 120);
   transition: 0.2s ease-in-out;
 }
-.moveButton:hover:not(:active) {
+.pushButton:hover:not(:active) {
   background: linear-gradient(rgb(126, 126, 134), rgb(70, 71, 76))
     rgb(126, 126, 134);
 }
-.moveButton:active {
+.pushButton:active {
   background: linear-gradient(rgb(76, 77, 82), rgb(56, 57, 62)) rgb(76, 77, 82);
 }
 
-.task {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 3px;
-  min-width: 320 px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.task:nth-child(even) {
-  background-color: rgb(182, 182, 182);
-}
-
-.taskText {
-  margin-left: 5px;
-  width: 400px;
-}
-
-.isDone {
-  margin-right: 10px;
+.errorValue {
+  color: rgb(252, 137, 137);
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 2px;
+  letter-spacing: 0.05rem;
+  position: absolute;
+  top: 45px;
 }

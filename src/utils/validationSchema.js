@@ -1,9 +1,9 @@
 import * as yup from 'yup';
 
 export const TODO_VALIDATION_SCHEMA = yup.object({
-  body: yup
+  task: yup
     .string()
-    .max(100, 'More than 100 symbols')
+    .max(40, 'More than 50 symbols')
     .trim()
     .required('Write something to add'),
 });
